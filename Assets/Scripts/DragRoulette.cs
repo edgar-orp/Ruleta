@@ -18,9 +18,9 @@ namespace dev.xrlab.roulette
         {
             if (prizeDetected) prizeDetected = false; // Reset prize detection if user drags again
 
-            float deltaAngle = -eventData.delta.x;
-            roulette.Rotate(0, 0, -deltaAngle);
-            angularVelocity = -deltaAngle; // Set velocity based on last drag
+            float deltaAngle = eventData.delta.x;
+            roulette.Rotate(0, 0, deltaAngle);
+            angularVelocity = deltaAngle; // Set velocity based on last drag
             isSpinning = true;
 
             AudioManager.Instance.PlaySound(AudioManager.Instance.spinSound);
